@@ -1,0 +1,116 @@
+class 1 
+CLI_interface
+
+Attributes:
+
+    commande: string (user-entered command, e.g., "scan --target 192.168.1.1")
+
+Methods:
+
+    afficher_menu(): void (displays the CLI menu)
+    executer_commande(): void (parses and executes user commands)
+    afficher_progression(): void (shows progress indicators for long tasks)
+
+class 2  port 
+
+    Attributes:
+        etat: Enum (port state: open, closed, filtered)
+        numero_port: int (port number, e.g., 80 for HTTP)
+    Methods:
+        None explicitly defined, but could include getters/setters.
+
+class 3  Reseau ( network ) 
+
+    Attributes:
+
+    	adresse_ip: string (network IP range, e.g., "192.168.1.0/24"; diagram says int, but should be a string)
+    	masque_reseau: int (subnet mask, e.g., 24 for /24)
+
+    Methods:
+
+    	scanner_reseau(): MachineCible (discovers active hosts, returning a MachineCible or collection)
+    	verifier_reseau(): MachineCible (verifies network status or connectivity)
+
+class 4 utilisateur 
+	
+    Attributes:
+
+    	Name: string (username)
+    	Prenom: string (first name)
+
+    Methods:
+
+    	demander_aide(): void (displays help menu or instructions)
+    	s'authentifier(): void (handles user authentication/login)
+	.....
+
+
+class 5 superutilisateur 
+	
+    Attributes : same as the user .
+    
+    Methods:
+
+    	scanner_ports(): void (scans ports on a target)
+    	scanner_reseau(): void (scans the network for hosts)
+    	(Implied) exploiter_vulnerabilite(): void 
+     
+class 6 Administrateur 
+
+     Attributes : same as the user .
+	
+     Methods:
+
+    	configurer_systeme(): void (configures system settings, e.g., scan frequency, report formats)
+    	gerer_utilisateurs(): void (manages users: create, modify, delete, list)
+    	voir_journaux(): void (views system logs)
+
+classe 7 rapport 
+
+    Attributes:
+
+    	contenu: string (report content, e.g., scan results, vulnerabilities found)
+    	type_rapport: string (report format, e.g., PDF, TXT, HTML)
+
+    Methods:
+
+    	(Implied) generer_rapport(): void
+
+class 8 log 
+    Attributes:
+
+    	action: string (action performed, e.g., "scan started")
+    	Date_heure: DateTime (timestamp of the action)
+    	utilisateur: string (user who performed the action)
+
+    Methods:
+
+    	None explicitly defined, but could include methods for logging or retrieving logs.
+
+class 9 Vulnerability 
+
+    Attributes:
+
+    	id_vulnerabilite: string (e.g., CVE-ID like "CVE-2021-1234")
+    	description: string (details of the vulnerability)
+    	service_associe: string (service affected, e.g., "Apache 2.4.1")
+
+    Methods:
+
+    	verifier_vulnerabilite(): boolean (checks if the vulnerability exists on the target)
+class 10 Exploitation
+class 11 networkAnalysis
+class 13 postExploitation 
+( this ^
+class 14 configuration 
+    Attributes:
+
+    	frequence_scan: int (frequency of automated scans)
+    	niveau_rapport: string (report detail level, e.g., "basic", "detailed")
+    	limite_ressources: int (resource limits, e.g., memory/CPU usage)
+
+    Methods:
+
+    	sauvegarder_config(): void (saves configuration settings)
+    	restaurer_defaut(): void (restores default settings)
+
